@@ -13,4 +13,9 @@ stub = hub_pb2_grpc.HubStub(chan)
 # This gets the balance in IOTA for user 1
 response = stub.GetBalance(messages_pb2.GetBalanceRequest(userId='1'))
 
-print(response.available)
+print('{}i available for user 1'.format(response.available))
+
+
+response = stub.GetUserHistory(messages_pb2.GetUserHistoryRequest(userId='1', newerThan=0))
+print('History:')
+print(response)
