@@ -8,7 +8,4 @@ stub = hub_pb2_grpc.HubStub(chan)
 #This creates a new user and generates a deposit address
 stub.CreateUser(messages_pb2.CreateUserRequest(userId='user-1'))
 
-# Here we get a new Deposit address
-response = stub.GetDepositAddress(messages_pb2.GetDepositAddressRequest(userId='user-1', includeChecksum=True))
-print(response.address)
-
+print("New user with id 'user-1' created!")
